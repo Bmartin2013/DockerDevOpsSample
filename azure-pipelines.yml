@@ -7,7 +7,7 @@ jobs:
     displayName: 'Build docker image'
   - bash: docker tag dockerdevopssample $(dockerId).azurecr.io/latest:$(Build.SourceVersion)
     displayName: 'Re-tag docker image'
-  - bash: docker login -u $(dockerId) -p $(dockerPassword) $(dockerid).azurecr.io
+  - bash: docker login -u $(dockerId) -p $(dockerPassword) $(dockerId).azurecr.io
     displayName: 'Authenticate ACR'
   - bash: docker push $(dockerId).azurecr.io/latest:$(Build.SourceVersion)
     displayName: 'Push docker image' 
